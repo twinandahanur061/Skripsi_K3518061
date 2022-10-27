@@ -1,0 +1,815 @@
+root@vmdocker:/home/ubuntu# docker run -d phoronix/pts
+d0a871a5ace3e1a7a918f23c7873748a978ddc645fb3c9d6840c0c81572401bb
+root@vmdocker:/home/ubuntu# docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                                                                  NAMES
+d0a871a5ace3   phoronix/pts       "/phoronix-test-suit…"   19 seconds ago   Up 17 seconds                                                                                          friendly_einstein
+7557cb3d9f07   bitnami/moodle:3   "/opt/bitnami/script…"   10 days ago      Up 13 hours     0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 0.0.0.0:8443->8443/tcp, :::8443->8443/tcp   moodle
+730cb8646e63   bitnami/mariadb    "/opt/bitnami/script…"   10 days ago      Up 13 hours     3306/tcp                                                                               mariadb
+root@vmdocker:/home/ubuntu# ^C
+root@vmdocker:/home/ubuntu# docker stop 7557cb3d9f07
+7557cb3d9f07
+root@vmdocker:/home/ubuntu# docker stop 730cb8646e63
+730cb8646e63
+root@vmdocker:/home/ubuntu# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS     NAMES
+d0a871a5ace3   phoronix/pts   "/phoronix-test-suit…"   44 seconds ago   Up 42 seconds             friendly_einstein
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash
+root@d0a871a5ace3:/# exit
+exit
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c “apt-get update && apt-get install make build-essential zlib1g-dev"
+> `^C
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c “apt-get update && apt-get install make build-essential zlib1g-dev"
+> ^C
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c “apt-get install zlib1g-dev"
+> ^C
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c “apt-get update && apt-get install make build-essential zlib1g-dev"
+>
+> ^C
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash
+root@d0a871a5ace3:/# exit
+exit
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c "apt-get update"
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2170 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2638 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security amd64 Contents (deb) [131 MB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates amd64 Contents (deb) [143 MB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [1661 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1203 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [30.2 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-backports amd64 Contents (deb) [791 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [27.4 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1541 kB]
+Get:16 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [906 kB]
+Get:17 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [27.5 kB]
+Fetched 286 MB in 1min 27s (3299 kB/s)
+Reading package lists... Done
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash -c "apt-get install zlib1g-dev"
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libc-dev-bin libc6 libc6-dev libcrypt-dev linux-libc-dev manpages
+  manpages-dev
+Suggested packages:
+  glibc-doc locales man-browser
+The following NEW packages will be installed:
+  libc-dev-bin libc6-dev libcrypt-dev linux-libc-dev manpages manpages-dev
+  zlib1g-dev
+The following packages will be upgraded:
+  libc6
+1 upgraded, 7 newly installed, 0 to remove and 44 not upgraded.
+Need to get 10.3 MB of archives.
+After this operation, 32.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6 amd64 2.31-0ubuntu9.9 [2722 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 manpages all 5.05-1 [1314 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc-dev-bin amd64 2.31-0ubuntu9.9 [71.8 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-126.142 [1118 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libcrypt-dev amd64 1:4.4.10-10ubuntu4 [104 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6-dev amd64 2.31-0ubuntu9.9 [2519 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 manpages-dev all 5.05-1 [2266 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu1.3 [155 kB]
+Fetched 10.3 MB in 6s (1778 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76, <> line 8.)
+debconf: falling back to frontend: Readline
+Preconfiguring packages ...
+(Reading database ... 10667 files and directories currently installed.)
+Preparing to unpack .../libc6_2.31-0ubuntu9.9_amd64.deb ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Unpacking libc6:amd64 (2.31-0ubuntu9.9) over (2.31-0ubuntu9.7) ...
+Setting up libc6:amd64 (2.31-0ubuntu9.9) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package manpages.
+(Reading database ... 10667 files and directories currently installed.)
+Preparing to unpack .../0-manpages_5.05-1_all.deb ...
+Unpacking manpages (5.05-1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../1-libc-dev-bin_2.31-0ubuntu9.9_amd64.deb ...
+Unpacking libc-dev-bin (2.31-0ubuntu9.9) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../2-linux-libc-dev_5.4.0-126.142_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.4.0-126.142) ...
+Selecting previously unselected package libcrypt-dev:amd64.
+Preparing to unpack .../3-libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb ...
+Unpacking libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../4-libc6-dev_2.31-0ubuntu9.9_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.31-0ubuntu9.9) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../5-manpages-dev_5.05-1_all.deb ...
+Unpacking manpages-dev (5.05-1) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../6-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu1.3_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.3) ...
+Setting up manpages (5.05-1) ...
+Setting up linux-libc-dev:amd64 (5.4.0-126.142) ...
+Setting up libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+Setting up libc-dev-bin (2.31-0ubuntu9.9) ...
+Setting up manpages-dev (5.05-1) ...
+Setting up libc6-dev:amd64 (2.31-0ubuntu9.9) ...
+Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.3) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+root@vmdocker:/home/ubuntu# docker exec -it d0a871a5ace3 /bin/bash
+root@d0a871a5ace3:/# cd phoronix-test-suite/'
+> ^C
+root@d0a871a5ace3:/# cd phoronix-test-suite
+root@d0a871a5ace3:/phoronix-test-suite# ls
+AUTHORS    SECURITY.md    install.bat          phoronix-test-suite.bat
+COPYING    deploy         install_macos        pts-core
+ChangeLog  documentation  ob-cache             release-highlights.md
+README.md  install-sh     phoronix-test-suite
+root@d0a871a5ace3:/phoronix-test-suite# ./phoronix-test-suite benchmark pts/fio-1.15.0 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ..................................
+
+The following dependencies are needed and will be installed:
+
+- build-essential
+- autoconf
+- libaio-dev
+
+This process may take several minutes.
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76, <> line 62.)
+debconf: falling back to frontend: Readline
+Extracting templates from packages: 100%
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  automake autotools-dev binutils binutils-common binutils-x86-64-linux-gnu
+  cpp cpp-9 dirmngr dpkg-dev fakeroot g++ g++-9 gcc gcc-9 gcc-9-base gnupg
+  gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf
+  gpgsm gpgv libaio1 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libasan5 libassuan0 libatomic1 libbinutils libcc1-0
+  libctf-nobfd0 libctf0 libdpkg-perl libfakeroot libfile-fcntllock-perl
+  libgcc-9-dev libgomp1 libisl22 libitm1 libksba8 liblocale-gettext-perl
+  liblsan0 libmpc3 libmpfr6 libnpth0 libquadmath0 libreadline8 libsigsegv2
+  libstdc++-9-dev libtsan0 libubsan1 m4 make pinentry-curses readline-common
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc libtool gettext binutils-doc
+  cpp-doc gcc-9-locales dbus-user-session libpam-systemd pinentry-gnome3 tor
+  debian-keyring g++-multilib g++-9-multilib gcc-9-doc gcc-multilib flex bison
+  gdb gcc-doc gcc-9-multilib parcimonie xloadimage scdaemon bzr
+  libstdc++-9-doc m4-doc make-doc pinentry-doc readline-doc
+The following NEW packages will be installed:
+  autoconf automake autotools-dev binutils binutils-common
+  binutils-x86-64-linux-gnu build-essential cpp cpp-9 dirmngr dpkg-dev
+  fakeroot g++ g++-9 gcc gcc-9 gcc-9-base gnupg gnupg-l10n gnupg-utils gpg
+  gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm libaio-dev libaio1
+  libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+  libasan5 libassuan0 libatomic1 libbinutils libcc1-0 libctf-nobfd0 libctf0
+  libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-9-dev libgomp1
+  libisl22 libitm1 libksba8 liblocale-gettext-perl liblsan0 libmpc3 libmpfr6
+  libnpth0 libquadmath0 libreadline8 libsigsegv2 libstdc++-9-dev libtsan0
+  libubsan1 m4 make pinentry-curses readline-common
+The following packages will be upgraded:
+  gpgv
+1 upgraded, 61 newly installed, 0 to remove and 43 not upgraded.
+Need to get 43.6 MB of archives.
+After this operation, 185 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 liblocale-gettext-perl amd64 1.07-4 [17.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpgv amd64 2.2.19-3ubuntu2.2 [200 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 readline-common all 8.0-4 [53.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libreadline8 amd64 8.0-4 [131 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libsigsegv2 amd64 2.12-2 [13.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 m4 amd64 1.4.18-4 [199 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 autoconf all 2.69-11.1 [321 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 autotools-dev all 20180224.1 [39.6 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 automake all 1:1.16.1-4ubuntu6 [522 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-common amd64 2.34-6ubuntu1.3 [207 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libbinutils amd64 2.34-6ubuntu1.3 [474 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf-nobfd0 amd64 2.34-6ubuntu1.3 [47.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf0 amd64 2.34-6ubuntu1.3 [46.6 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.34-6ubuntu1.3 [1613 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils amd64 2.34-6ubuntu1.3 [3380 B]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9-base amd64 9.4.0-1ubuntu1~20.04.1 [19.4 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal/main amd64 libisl22 amd64 0.22.1-1 [592 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal/main amd64 libmpfr6 amd64 4.0.2-1 [240 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/main amd64 libmpc3 amd64 1.1.0-1 [40.8 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 cpp-9 amd64 9.4.0-1ubuntu1~20.04.1 [7500 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 cpp amd64 4:9.3.0-1ubuntu2 [27.6 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcc1-0 amd64 10.3.0-1ubuntu1~20.04 [48.8 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgomp1 amd64 10.3.0-1ubuntu1~20.04 [102 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libitm1 amd64 10.3.0-1ubuntu1~20.04 [26.2 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libatomic1 amd64 10.3.0-1ubuntu1~20.04 [9284 B]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libasan5 amd64 9.4.0-1ubuntu1~20.04.1 [2751 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 liblsan0 amd64 10.3.0-1ubuntu1~20.04 [835 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtsan0 amd64 10.3.0-1ubuntu1~20.04 [2009 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libubsan1 amd64 10.3.0-1ubuntu1~20.04 [784 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libquadmath0 amd64 10.3.0-1ubuntu1~20.04 [146 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgcc-9-dev amd64 9.4.0-1ubuntu1~20.04.1 [2359 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9 amd64 9.4.0-1ubuntu1~20.04.1 [8274 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal/main amd64 gcc amd64 4:9.3.0-1ubuntu2 [5208 B]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libstdc++-9-dev amd64 9.4.0-1ubuntu1~20.04.1 [1722 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 g++-9 amd64 9.4.0-1ubuntu1~20.04.1 [8420 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal/main amd64 g++ amd64 4:9.3.0-1ubuntu2 [1604 B]
+Get:37 http://archive.ubuntu.com/ubuntu focal/main amd64 make amd64 4.2.1-1.2 [162 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libdpkg-perl all 1.19.7ubuntu3.2 [231 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 dpkg-dev all 1.19.7ubuntu3.2 [679 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 build-essential amd64 12.8ubuntu1.1 [4664 B]
+Get:41 http://archive.ubuntu.com/ubuntu focal/main amd64 libassuan0 amd64 2.5.3-7ubuntu2 [35.7 kB]
+Get:42 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpgconf amd64 2.2.19-3ubuntu2.2 [124 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal/main amd64 libksba8 amd64 1.3.5-2 [92.6 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal/main amd64 libnpth0 amd64 1.6-1 [7736 B]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 dirmngr amd64 2.2.19-3ubuntu2.2 [330 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal/main amd64 libfakeroot amd64 1.24-1 [25.7 kB]
+Get:47 http://archive.ubuntu.com/ubuntu focal/main amd64 fakeroot amd64 1.24-1 [62.6 kB]
+Get:48 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gnupg-l10n all 2.2.19-3ubuntu2.2 [51.7 kB]
+Get:49 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gnupg-utils amd64 2.2.19-3ubuntu2.2 [481 kB]
+Get:50 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpg amd64 2.2.19-3ubuntu2.2 [482 kB]
+Get:51 http://archive.ubuntu.com/ubuntu focal/main amd64 pinentry-curses amd64 1.1.0-3build1 [36.3 kB]
+Get:52 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpg-agent amd64 2.2.19-3ubuntu2.2 [232 kB]
+Get:53 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpg-wks-client amd64 2.2.19-3ubuntu2.2 [97.4 kB]
+Get:54 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpg-wks-server amd64 2.2.19-3ubuntu2.2 [90.2 kB]
+Get:55 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gpgsm amd64 2.2.19-3ubuntu2.2 [217 kB]
+Get:56 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gnupg all 2.2.19-3ubuntu2.2 [259 kB]
+Get:57 http://archive.ubuntu.com/ubuntu focal/main amd64 libaio1 amd64 0.3.112-5 [7184 B]
+Get:58 http://archive.ubuntu.com/ubuntu focal/main amd64 libaio-dev amd64 0.3.112-5 [13.7 kB]
+Get:59 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-diff-perl all 1.19.03-2 [46.6 kB]
+Get:60 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-diff-xs-perl amd64 0.04-6 [11.3 kB]
+Get:61 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+Get:62 http://archive.ubuntu.com/ubuntu focal/main amd64 libfile-fcntllock-perl amd64 0.22-3build4 [33.1 kB]
+Fetched 43.6 MB in 8s (5243 kB/s)
+Selecting previously unselected package liblocale-gettext-perl.
+(Reading database ... 14662 files and directories currently installed.)
+Preparing to unpack .../liblocale-gettext-perl_1.07-4_amd64.deb ...
+Unpacking liblocale-gettext-perl (1.07-4) ...
+Preparing to unpack .../gpgv_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpgv (2.2.19-3ubuntu2.2) over (2.2.19-3ubuntu2.1) ...
+Setting up gpgv (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package readline-common.
+(Reading database ... 14673 files and directories currently installed.)
+Preparing to unpack .../00-readline-common_8.0-4_all.deb ...
+Unpacking readline-common (8.0-4) ...
+Selecting previously unselected package libreadline8:amd64.
+Preparing to unpack .../01-libreadline8_8.0-4_amd64.deb ...
+Unpacking libreadline8:amd64 (8.0-4) ...
+Selecting previously unselected package libsigsegv2:amd64.
+Preparing to unpack .../02-libsigsegv2_2.12-2_amd64.deb ...
+Unpacking libsigsegv2:amd64 (2.12-2) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../03-m4_1.4.18-4_amd64.deb ...
+Unpacking m4 (1.4.18-4) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../04-autoconf_2.69-11.1_all.deb ...
+Unpacking autoconf (2.69-11.1) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../05-autotools-dev_20180224.1_all.deb ...
+Unpacking autotools-dev (20180224.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../06-automake_1%3a1.16.1-4ubuntu6_all.deb ...
+Unpacking automake (1:1.16.1-4ubuntu6) ...
+Selecting previously unselected package binutils-common:amd64.
+Preparing to unpack .../07-binutils-common_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking binutils-common:amd64 (2.34-6ubuntu1.3) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../08-libbinutils_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking libbinutils:amd64 (2.34-6ubuntu1.3) ...
+Selecting previously unselected package libctf-nobfd0:amd64.
+Preparing to unpack .../09-libctf-nobfd0_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.34-6ubuntu1.3) ...
+Selecting previously unselected package libctf0:amd64.
+Preparing to unpack .../10-libctf0_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking libctf0:amd64 (2.34-6ubuntu1.3) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../11-binutils-x86-64-linux-gnu_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.34-6ubuntu1.3) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../12-binutils_2.34-6ubuntu1.3_amd64.deb ...
+Unpacking binutils (2.34-6ubuntu1.3) ...
+Selecting previously unselected package gcc-9-base:amd64.
+Preparing to unpack .../13-gcc-9-base_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package libisl22:amd64.
+Preparing to unpack .../14-libisl22_0.22.1-1_amd64.deb ...
+Unpacking libisl22:amd64 (0.22.1-1) ...
+Selecting previously unselected package libmpfr6:amd64.
+Preparing to unpack .../15-libmpfr6_4.0.2-1_amd64.deb ...
+Unpacking libmpfr6:amd64 (4.0.2-1) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../16-libmpc3_1.1.0-1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.1.0-1) ...
+Selecting previously unselected package cpp-9.
+Preparing to unpack .../17-cpp-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking cpp-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../18-cpp_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking cpp (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../19-libcc1-0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libcc1-0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../20-libgomp1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libgomp1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../21-libitm1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libitm1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../22-libatomic1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libatomic1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libasan5:amd64.
+Preparing to unpack .../23-libasan5_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libasan5:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../24-liblsan0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking liblsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../25-libtsan0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libtsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../26-libubsan1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libubsan1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../27-libquadmath0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libquadmath0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libgcc-9-dev:amd64.
+Preparing to unpack .../28-libgcc-9-dev_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package gcc-9.
+Preparing to unpack .../29-gcc-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking gcc-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../30-gcc_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking gcc (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package libstdc++-9-dev:amd64.
+Preparing to unpack .../31-libstdc++-9-dev_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++-9.
+Preparing to unpack .../32-g++-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../33-g++_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking g++ (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package make.
+Preparing to unpack .../34-make_4.2.1-1.2_amd64.deb ...
+Unpacking make (4.2.1-1.2) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../35-libdpkg-perl_1.19.7ubuntu3.2_all.deb ...
+Unpacking libdpkg-perl (1.19.7ubuntu3.2) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../36-dpkg-dev_1.19.7ubuntu3.2_all.deb ...
+Unpacking dpkg-dev (1.19.7ubuntu3.2) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../37-build-essential_12.8ubuntu1.1_amd64.deb ...
+Unpacking build-essential (12.8ubuntu1.1) ...
+Selecting previously unselected package libassuan0:amd64.
+Preparing to unpack .../38-libassuan0_2.5.3-7ubuntu2_amd64.deb ...
+Unpacking libassuan0:amd64 (2.5.3-7ubuntu2) ...
+Selecting previously unselected package gpgconf.
+Preparing to unpack .../39-gpgconf_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpgconf (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package libksba8:amd64.
+Preparing to unpack .../40-libksba8_1.3.5-2_amd64.deb ...
+Unpacking libksba8:amd64 (1.3.5-2) ...
+Selecting previously unselected package libnpth0:amd64.
+Preparing to unpack .../41-libnpth0_1.6-1_amd64.deb ...
+Unpacking libnpth0:amd64 (1.6-1) ...
+Selecting previously unselected package dirmngr.
+Preparing to unpack .../42-dirmngr_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking dirmngr (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../43-libfakeroot_1.24-1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.24-1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../44-fakeroot_1.24-1_amd64.deb ...
+Unpacking fakeroot (1.24-1) ...
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack .../45-gnupg-l10n_2.2.19-3ubuntu2.2_all.deb ...
+Unpacking gnupg-l10n (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack .../46-gnupg-utils_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gnupg-utils (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gpg.
+Preparing to unpack .../47-gpg_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpg (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack .../48-pinentry-curses_1.1.0-3build1_amd64.deb ...
+Unpacking pinentry-curses (1.1.0-3build1) ...
+Selecting previously unselected package gpg-agent.
+Preparing to unpack .../49-gpg-agent_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpg-agent (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack .../50-gpg-wks-client_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpg-wks-client (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gpg-wks-server.
+Preparing to unpack .../51-gpg-wks-server_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpg-wks-server (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gpgsm.
+Preparing to unpack .../52-gpgsm_2.2.19-3ubuntu2.2_amd64.deb ...
+Unpacking gpgsm (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package gnupg.
+Preparing to unpack .../53-gnupg_2.2.19-3ubuntu2.2_all.deb ...
+Unpacking gnupg (2.2.19-3ubuntu2.2) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../54-libaio1_0.3.112-5_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.112-5) ...
+Selecting previously unselected package libaio-dev:amd64.
+Preparing to unpack .../55-libaio-dev_0.3.112-5_amd64.deb ...
+Unpacking libaio-dev:amd64 (0.3.112-5) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../56-libalgorithm-diff-perl_1.19.03-2_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.03-2) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../57-libalgorithm-diff-xs-perl_0.04-6_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-6) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../58-libalgorithm-merge-perl_0.08-3_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-3) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../59-libfile-fcntllock-perl_0.22-3build4_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-3build4) ...
+Setting up libksba8:amd64 (1.3.5-2) ...
+Setting up libfile-fcntllock-perl (0.22-3build4) ...
+Setting up libalgorithm-diff-perl (1.19.03-2) ...
+Setting up binutils-common:amd64 (2.34-6ubuntu1.3) ...
+Setting up libctf-nobfd0:amd64 (2.34-6ubuntu1.3) ...
+Setting up libnpth0:amd64 (1.6-1) ...
+Setting up libassuan0:amd64 (2.5.3-7ubuntu2) ...
+Setting up libgomp1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libfakeroot:amd64 (1.24-1) ...
+Setting up fakeroot (1.24-1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/fakeroot.1.gz because associated file /usr/share/man/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/faked.1.gz because associated file /usr/share/man/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/es/man1/fakeroot.1.gz because associated file /usr/share/man/es/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/es/man1/faked.1.gz because associated file /usr/share/man/es/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/fakeroot.1.gz because associated file /usr/share/man/fr/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/faked.1.gz because associated file /usr/share/man/fr/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/sv/man1/fakeroot.1.gz because associated file /usr/share/man/sv/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/sv/man1/faked.1.gz because associated file /usr/share/man/sv/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
+Setting up autotools-dev (20180224.1) ...
+Setting up make (4.2.1-1.2) ...
+Setting up libmpfr6:amd64 (4.0.2-1) ...
+Setting up gnupg-l10n (2.2.19-3ubuntu2.2) ...
+Setting up libsigsegv2:amd64 (2.12-2) ...
+Setting up libquadmath0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libmpc3:amd64 (1.1.0-1) ...
+Setting up libatomic1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libdpkg-perl (1.19.7ubuntu3.2) ...
+Setting up libubsan1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libisl22:amd64 (0.22.1-1) ...
+Setting up libbinutils:amd64 (2.34-6ubuntu1.3) ...
+Setting up libaio1:amd64 (0.3.112-5) ...
+Setting up libalgorithm-diff-xs-perl (0.04-6) ...
+Setting up readline-common (8.0-4) ...
+Setting up libcc1-0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up liblocale-gettext-perl (1.07-4) ...
+Setting up liblsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libitm1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up libtsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libctf0:amd64 (2.34-6ubuntu1.3) ...
+Setting up pinentry-curses (1.1.0-3build1) ...
+Setting up libreadline8:amd64 (8.0-4) ...
+Setting up m4 (1.4.18-4) ...
+Setting up libaio-dev:amd64 (0.3.112-5) ...
+Setting up libasan5:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up autoconf (2.69-11.1) ...
+Setting up gpgconf (2.2.19-3ubuntu2.2) ...
+Setting up cpp-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up gpg (2.2.19-3ubuntu2.2) ...
+Setting up gnupg-utils (2.2.19-3ubuntu2.2) ...
+Setting up binutils-x86-64-linux-gnu (2.34-6ubuntu1.3) ...
+Setting up automake (1:1.16.1-4ubuntu6) ...
+update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/automake.1.gz because associated file /usr/share/man/man1/automake-1.16.1.gz (of link group automake) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/aclocal.1.gz because associated file /usr/share/man/man1/aclocal-1.16.1.gz (of link group automake) doesn't exist
+Setting up gpg-agent (2.2.19-3ubuntu2.2) ...
+Setting up gpgsm (2.2.19-3ubuntu2.2) ...
+Setting up binutils (2.34-6ubuntu1.3) ...
+Setting up dpkg-dev (1.19.7ubuntu3.2) ...
+Setting up libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up dirmngr (2.2.19-3ubuntu2.2) ...
+Setting up gpg-wks-server (2.2.19-3ubuntu2.2) ...
+Setting up cpp (4:9.3.0-1ubuntu2) ...
+Setting up gcc-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up gpg-wks-client (2.2.19-3ubuntu2.2) ...
+Setting up gcc (4:9.3.0-1ubuntu2) ...
+Setting up g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up g++ (4:9.3.0-1ubuntu2) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/c++.1.gz because associated file /usr/share/man/man1/g++.1.gz (of link group c++) doesn't exist
+Setting up gnupg (2.2.19-3ubuntu2.2) ...
+Setting up build-essential (12.8ubuntu1.1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+
+Phoronix Test Suite v10.8.3
+
+    To Install:    pts/fio-1.15.0
+
+    Determining File Requirements ..........................................
+    Searching Download Caches ..............................................
+
+    1 Test To Install
+        1 File To Download [5.86MB]
+        14MB Of Disk Space Is Needed
+        26 Seconds Estimated Install Time
+
+    pts/fio-1.15.0:
+        Test Installation 1 of 1
+        1 File Needed [5.86 MB]
+        Downloading: fio-3.29.tar.gz                                [5.86MB]
+        Downloading ........................................................
+        Approximate Install Size: 14 MB
+        Estimated Install Time: 26 Seconds
+        Installing Test @ 13:34:18
+
+
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0
+    Disk Test Configuration
+        1: Random Read
+        2: Random Write
+        3: Sequential Read
+        4: Sequential Write
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 3,4
+
+
+        1: IO_uring
+        2: POSIX AIO
+        3: Sync
+        4: Linux AIO
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Engine: 4
+
+
+        1: Yes
+        2: No
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Buffered: 2
+
+
+        1: No
+        2: Yes
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Direct: 2
+
+
+        1:  4KB
+        2:  8KB
+        3:  16KB
+        4:  32KB
+        5:  64KB
+        6:  128KB
+        7:  256KB
+        8:  512KB
+        9:  1MB
+        10: 2MB
+        11: 4MB
+        12: 8MB
+        13: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Block Size: 9
+
+
+System Information
+
+
+  PROCESSOR:              Common KVM
+    Core Count:           4
+    Extensions:           SSE 2
+    Cache Size:           16 MB
+    Microcode:            0x1
+    Core Family:          Family 15 Model 6
+
+  GRAPHICS:               bochs-drmdrmfb
+    Monitor:              QEMU Monitor
+    Screen:               1024x768
+
+  MOTHERBOARD:            QEMU Standard PC
+    BIOS Version:         rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org
+
+  MEMORY:                 8GB
+
+  DISK:                   86GB QEMU HDD
+    File-System:          overlayfs
+    Disk Scheduler:       NONE
+
+  OPERATING SYSTEM:       Ubuntu 20.04.4 LTS
+    Kernel:               5.15.0-47-generic (x86_64)                            
+    Compiler:             GCC 9.4.0                                             
+    System Layer:         Docker                                                
+    Security:             itlb_multihit: KVM: Mitigation of VMX unsupported     
+                          + l1tf: Mitigation of PTE Inversion                   
+                          + mds: Vulnerable: Clear buffers attempted no microcode; SMT Host state unknown
+                          + meltdown: Mitigation of PTI                         
+                          + mmio_stale_data: Not affected                       
+                          + retbleed: Not affected                              
+                          + spec_store_bypass: Vulnerable                       
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of Retpolines STIBP: disabled RSB filling
+                          + srbds: Not affected                                 
+                          + tsx_async_abort: Not affected                       
+
+    Would you like to save these test results (Y/n): y
+    Enter a name for the result file: sistem2hddfio
+    Enter a unique name to describe this test run / configuration:
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+New Description:
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 1 of 2
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      12 Minutes
+    Estimated Time To Completion: 23 Minutes [14:06 UTC]
+        Running Pre-Test Script @ 13:44:23
+        Started Run 1 @ 13:44:23
+        Running Interim Test Script @ 13:45:03
+        Started Run 2 @ 13:45:05
+        Running Interim Test Script @ 13:45:45
+        Started Run 3 @ 13:45:47
+        Running Interim Test Script @ 13:46:27
+        Started Run 4 @ 13:46:29
+        Running Interim Test Script @ 13:47:09
+        Started Run 5 @ 13:47:11
+        Running Interim Test Script @ 13:47:52
+        Started Run 6 @ 13:47:54
+        Running Interim Test Script @ 13:48:35
+        Started Run 7 @ 13:48:37
+        Running Interim Test Script @ 13:49:17
+        Started Run 8 @ 13:49:19
+        Running Interim Test Script @ 13:49:59
+        Started Run 9 @ 13:50:01
+        Running Interim Test Script @ 13:50:41
+        Started Run 10 @ 13:50:43
+        Running Post-Test Script @ 13:51:24
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        114
+        117
+        121
+        118
+        114
+        113
+        114
+        118
+        117
+        114
+
+    Average: 116 MB/s
+    Deviation: 2.23%
+    Samples: 10
+
+    Comparison of 55 OpenBenchmarking.org samples since 6 January; median result: 454 MB/s. Box plot of samples:
+    [#####!#####*############################-------------------------------|  ]
+                ^ 2000GB Samsung SSD 970 EVO Plus 2TB: 976
+
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        111
+        113
+        117
+        115
+        110
+        109
+        110
+        114
+        114
+        110
+
+    Average: 112 IOPS
+    Deviation: 2.38%
+    Samples: 10
+
+    Comparison of 60 OpenBenchmarking.org samples since 6 January; median result: 889 IOPS. Box plot of samples:
+    [##!#############-------------------------------------------------|        ]
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 2 of 2
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 7 Minutes [13:58 UTC]
+        Running Pre-Test Script @ 13:51:33
+        Started Run 1 @ 13:51:33
+        Running Interim Test Script @ 13:52:06
+        Started Run 2 @ 13:52:08
+        Running Interim Test Script @ 13:52:41
+        Started Run 3 @ 13:52:43
+        Running Interim Test Script @ 13:53:16
+        Started Run 4 @ 13:53:18
+        Running Interim Test Script @ 13:53:51
+        Started Run 5 @ 13:53:53
+        Running Interim Test Script @ 13:54:25
+        Started Run 6 @ 13:54:27
+        Running Interim Test Script @ 13:55:01
+        Started Run 7 @ 13:55:03
+        Running Interim Test Script @ 13:55:35
+        Started Run 8 @ 13:55:37
+        Running Interim Test Script @ 13:56:10
+        Started Run 9 @ 13:56:12
+        Running Interim Test Script @ 13:56:45
+        Started Run 10 @ 13:56:47
+        Running Post-Test Script @ 13:57:20
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        115
+        115
+        118
+        116
+        109
+        95.1
+        89.3
+        93.2
+        84.5
+        86.5
+
+    Average: 102.2 MB/s
+    Deviation: 13.34%
+    Samples: 10
+
+    Comparison of 60 OpenBenchmarking.org samples since 6 January; median result: 304 MB/s. Box plot of samples:
+    [##!##################---------------------------------------------------| ]
+
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        111
+        112
+        114
+        113
+        106
+        92
+        86
+        90
+        81
+        83
+
+    Average: 99 IOPS
+    Deviation: 13.75%
+    Samples: 10
+
+    Comparison of 60 OpenBenchmarking.org samples since 6 January; median result: 301 IOPS. Box plot of samples:
+    [#!################---------------------------------------------|          ]
+
+
+    Percentile Classification Of Current Benchmark Run
+    DISK
+        Flexible IO Tester
+            Seq Read - Linux AIO - No - Yes - 1MB:   18th
+            Seq Write - Linux AIO - No - Yes - 1MB:  21st
+                                                     OpenBenchmarking.org Percentile
+    Do you want to view the text results of the testing (Y/n): y
+sistem2hddfio
+Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+
+QEMU HDD:
+
+        Processor: Common KVM (4 Cores), Motherboard: QEMU Standard PC (i440FX + PIIX 1996) (rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org BIOS), Memory: 8GB, Disk: 86GB QEMU HDD, Graphics: bochs-drmdrmfb, Monitor: QEMU Monitor
+
+        OS: Ubuntu 20.04.4 LTS, Kernel: 5.15.0-47-generic (x86_64), Compiler: GCC 9.4.0, File-System: overlayfs, Screen Resolution: 1024x768, System Layer: Docker
+
+
+Flexible IO Tester 3.29
+Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+MB/s > Higher Is Better
+QEMU HDD . 116 |================================================================
+
+
+Flexible IO Tester 3.29
+Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+IOPS > Higher Is Better
+QEMU HDD . 112 |================================================================
+
+
+Flexible IO Tester 3.29
+Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+MB/s > Higher Is Better
+QEMU HDD . 102.2 |==============================================================
+
+
+Flexible IO Tester 3.29
+Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+IOPS > Higher Is Better
+QEMU HDD . 99 |=================================================================
+
+    Would you like to upload the results to OpenBenchmarking.org (y/n): y
+    Would you like to attach the system logs (lspci, dmesg, lsusb, etc) to the test result (y/n): y
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209262-NE-SISTEM2HD87
+
+root@d0a871a5ace3:/phoronix-test-suite#

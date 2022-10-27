@@ -1,0 +1,315 @@
+root@vmubuntu:/home/ubuntu# phoronix-test-suite benchmark pts/fio-1.15.0 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ...............................................
+
+Phoronix Test Suite v10.8.4
+
+    Installed:     pts/fio-1.15.0
+
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0
+    Disk Test Configuration
+        1: Random Read
+        2: Random Write
+        3: Sequential Read
+        4: Sequential Write
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 3,4
+
+
+        1: IO_uring
+        2: POSIX AIO
+        3: Sync
+        4: Linux AIO
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Engine: 4
+
+
+        1: Yes
+        2: No
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Buffered: 2
+
+
+        1: No
+        2: Yes
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Direct: 2
+
+
+        1:  4KB
+        2:  8KB
+        3:  16KB
+        4:  32KB
+        5:  64KB
+        6:  128KB
+        7:  256KB
+        8:  512KB
+        9:  1MB
+        10: 2MB
+        11: 4MB
+        12: 8MB
+        13: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Block Size: 9
+
+
+        1: Default Test Directory
+        2: /
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Disk Target: 1
+
+
+System Information
+
+
+  PROCESSOR:              Common KVM
+    Core Count:           4
+    Extensions:           SSE 2
+    Cache Size:           16 MB
+    Microcode:            0x1
+    Core Family:          Family 15 Model 6
+
+  GRAPHICS:               bochs-drmdrmfb
+    Vulkan:               1.2.204
+    Monitor:              QEMU Monitor
+    Screen:               1024x768
+
+  MOTHERBOARD:            QEMU Standard PC
+    BIOS Version:         rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org
+    Chipset:              Intel 440FX 82441FX PMC
+    Network:              Red Hat Virtio device
+
+  MEMORY:                 1 x 8 GB RAM QEMU
+
+  DISK:                   86GB QEMU HDD
+    File-System:          ext4
+    Mount Options:        relatime rw
+    Disk Scheduler:       NONE
+    Disk Details:         Block Size: 4096
+
+  OPERATING SYSTEM:       Ubuntu 22.04
+    Kernel:               5.15.0-47-generic (x86_64)                                         
+    Compiler:             GCC 11.2.0                                                         
+    System Layer:         KVM                                                                
+    Security:             itlb_multihit: KVM: Mitigation of VMX unsupported                  
+                          + l1tf: Mitigation of PTE Inversion                                
+                          + mds: Vulnerable: Clear buffers attempted no microcode; SMT Host state unknown
+                          + meltdown: Mitigation of PTI                                      
+                          + mmio_stale_data: Not affected                                    
+                          + retbleed: Not affected                                           
+                          + spec_store_bypass: Vulnerable                                    
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of Retpolines STIBP: disabled RSB filling 
+                          + srbds: Not affected                                              
+                          + tsx_async_abort: Not affected                                    
+
+    Would you like to save these test results (Y/n): y
+
+    Recently Saved Test Results:
+       sistem1hddfio      [Today]
+       sistem1ramstream   [Today]
+       sistem1cpu7zip     [Today]
+
+    Enter a name for the result file: sistem1hddfio
+
+Current Test Identifiers:
+- sistem1hddfio
+
+    Enter a unique name to describe this test run / configuration: sistem1hddfi
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: KVM testing on Ubuntu 22.04 via the Phoronix Test Suite.
+
+New Description:
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 1 of 2
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      12 Minutes
+    Estimated Time To Completion: 23 Minutes [10:34 UTC]
+        Running Pre-Test Script @ 10:12:27
+        Started Run 1 @ 10:12:27
+        Running Interim Test Script @ 10:13:07
+        Started Run 2 @ 10:13:09
+        Running Interim Test Script @ 10:13:49
+        Started Run 3 @ 10:13:51
+        Running Interim Test Script @ 10:14:32
+        Started Run 4 @ 10:14:34
+        Running Interim Test Script @ 10:15:14
+        Started Run 5 @ 10:15:16
+        Running Interim Test Script @ 10:15:56
+        Started Run 6 @ 10:15:58
+        Running Interim Test Script @ 10:16:38
+        Started Run 7 @ 10:16:40
+        Running Interim Test Script @ 10:17:20
+        Started Run 8 @ 10:17:22
+        Running Interim Test Script @ 10:18:03
+        Started Run 9 @ 10:18:05
+        Running Interim Test Script @ 10:18:45
+        Started Run 10 @ 10:18:47
+        Running Post-Test Script @ 10:19:27
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        123
+        122
+        130
+        123
+        135
+        126
+        149
+        129
+        145
+        149
+
+    Average: 133 MB/s
+    Deviation: 8.13%
+    Samples: 10
+
+    Comparison of 43 OpenBenchmarking.org samples since 6 January; median result: 909 MB/s. Box plot of samples:
+    [-*##########!*#################################################-----------------------|]
+      ^ This Result (20th Percentile): 133
+                  ^ 2000GB Samsung SSD 970 EVO Plus 2TB: 976
+
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        119
+        119
+        127
+        119
+        131
+        122
+        145
+        125
+        142
+        145
+
+    Average: 129 IOPS
+    Deviation: 8.36%
+    Samples: 10
+
+    Comparison of 48 OpenBenchmarking.org samples since 6 January; median result: 1046 IOPS. Box plot of samples:
+    [###!##################----------------------------------------------------------------|]
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 2 of 2
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 7 Minutes [10:26 UTC]
+        Running Pre-Test Script @ 10:19:38
+        Started Run 1 @ 10:19:38
+        Running Interim Test Script @ 10:20:10
+        Started Run 2 @ 10:20:12
+        Running Interim Test Script @ 10:20:45
+        Started Run 3 @ 10:20:47
+        Running Interim Test Script @ 10:21:20
+        Started Run 4 @ 10:21:22
+        Running Interim Test Script @ 10:21:55
+        Started Run 5 @ 10:21:57
+        Running Interim Test Script @ 10:22:30
+        Started Run 6 @ 10:22:32
+        Running Interim Test Script @ 10:23:05
+        Started Run 7 @ 10:23:07
+        Running Interim Test Script @ 10:23:40
+        Started Run 8 @ 10:23:42
+        Running Interim Test Script @ 10:24:14
+        Started Run 9 @ 10:24:16
+        Running Interim Test Script @ 10:24:49
+        Started Run 10 @ 10:24:51
+        Running Post-Test Script @ 10:25:24
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        165
+        124
+        129
+        125
+        127
+        125
+        110
+        117
+        118
+        120
+
+    Average: 126 MB/s
+    Deviation: 11.75%
+    Samples: 10
+
+    Comparison of 48 OpenBenchmarking.org samples since 6 January; median result: 304 MB/s. Box plot of samples:
+    [##!###############################################################--------------------|]
+
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        162
+        121
+        126
+        121
+        123
+        121
+        107
+        114
+        114
+        116
+
+    Average: 123 IOPS
+    Deviation: 12.19%
+    Samples: 10
+
+    Comparison of 48 OpenBenchmarking.org samples since 6 January; median result: 301 IOPS. Box plot of samples:
+    [#!#####################################################-------------------------------|]
+
+    Do you want to view the text results of the testing (Y/n): y
+sistem1hddfio
+KVM testing on Ubuntu 22.04 via the Phoronix Test Suite.
+
+
+sistem1hddfio:
+
+        Processor: Common KVM (4 Cores), Motherboard: QEMU Standard PC (i440FX + PIIX 1996) (rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org BIOS), Chipset: Intel 440FX 82441FX PMC, Memory: 1 x 8 GB RAM QEMU, Disk: 86GB QEMU HDD, Graphics: bochs-drmdrmfb, Monitor: QEMU Monitor, Network: Red Hat Virtio device
+
+        OS: Ubuntu 22.04, Kernel: 5.15.0-47-generic (x86_64), Vulkan: 1.2.204, Compiler: GCC 11.2.0, File-System: ext4, Screen Resolution: 1024x768, System Layer: KVM
+
+sistem1hddfi:
+
+        Processor: Common KVM (4 Cores), Motherboard: QEMU Standard PC (i440FX + PIIX 1996) (rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org BIOS), Chipset: Intel 440FX 82441FX PMC, Memory: 1 x 8 GB RAM QEMU, Disk: 86GB QEMU HDD, Graphics: bochs-drmdrmfb, Monitor: QEMU Monitor, Network: Red Hat Virtio device
+
+        OS: Ubuntu 22.04, Kernel: 5.15.0-47-generic (x86_64), Vulkan: 1.2.204, Compiler: GCC 11.2.0, File-System: ext4, Screen Resolution: 1024x768, System Layer: KVM
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    MB/s > Higher Is Better
+    sistem1hddfi . 133 |=====================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    IOPS > Higher Is Better
+    sistem1hddfi . 129 |=====================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    MB/s > Higher Is Better
+    sistem1hddfi . 126 |=====================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    IOPS > Higher Is Better
+    sistem1hddfi . 123 |=====================================================================
+
+    Would you like to upload the results to OpenBenchmarking.org (y/n): y
+    Would you like to attach the system logs (lspci, dmesg, lsusb, etc) to the test result (y/n): y
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209167-TWIN-SISTEM137
+
+root@vmubuntu:/home/ubuntu#

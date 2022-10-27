@@ -1,0 +1,268 @@
+root@vmdocker:/home/ubuntu# docker exec -it b6c395206842 /bin/bash
+root@b6c395206842:/# cd phoronix-test-suite/
+root@b6c395206842:/phoronix-test-suite# ./phoronix-test-suite benchmark pts/stream-1.3.3 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ...............................................
+
+Phoronix Test Suite v10.8.3
+
+    Installed:     pts/stream-1.3.3
+
+
+Stream 2013-01-17:
+    pts/stream-1.3.3
+    Memory Test Configuration
+        1: Copy
+        2: Scale
+        3: Add
+        4: Triad
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 5
+
+
+System Information
+
+
+  PROCESSOR:              Common KVM
+    Core Count:           4
+    Extensions:           SSE 2
+    Cache Size:           16 MB
+    Microcode:            0x1
+    Core Family:          Family 15 Model 6
+
+  GRAPHICS:               bochs-drmdrmfb
+    Monitor:              QEMU Monitor
+    Screen:               1024x768
+
+  MOTHERBOARD:            QEMU Standard PC
+    BIOS Version:         rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org
+
+  MEMORY:                 8GB
+
+  DISK:                   86GB QEMU HDD
+    File-System:          overlayfs
+    Disk Scheduler:       NONE
+
+  OPERATING SYSTEM:       Ubuntu 20.04.4 LTS
+    Kernel:               5.15.0-47-generic (x86_64)                                         
+    Compiler:             GCC 9.4.0                                                          
+    System Layer:         Docker                                                             
+    Security:             itlb_multihit: KVM: Mitigation of VMX unsupported                  
+                          + l1tf: Mitigation of PTE Inversion                                
+                          + mds: Vulnerable: Clear buffers attempted no microcode; SMT Host state unknown
+                          + meltdown: Mitigation of PTI                                      
+                          + mmio_stale_data: Not affected                                    
+                          + retbleed: Not affected                                           
+                          + spec_store_bypass: Vulnerable                                    
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of Retpolines STIBP: disabled RSB filling 
+                          + srbds: Not affected                                              
+                          + tsx_async_abort: Not affected                                    
+
+    Would you like to save these test results (Y/n): y
+
+    Recently Saved Test Results:
+       sistem2ramstream   [Today]
+       sistem2cpu7zip     [Today]
+
+    Enter a name for the result file: sistem2ramstream
+
+Current Test Identifiers:
+- sistem2ramstream
+
+    Enter a unique name to describe this test run / configuration: sistem2ramstream
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+New Description:
+
+Stream 2013-01-17:
+    pts/stream-1.3.3 [Type: Copy]
+    Test 1 of 4
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      14 Minutes
+    Estimated Time To Completion: 54 Minutes [11:31 UTC]
+        Started Run 1 @ 10:38:41
+        Started Run 2 @ 10:40:05
+        Started Run 3 @ 10:41:30
+        Started Run 4 @ 10:42:54
+        Started Run 5 @ 10:44:19
+        Started Run 6 @ 10:45:43
+        Started Run 7 @ 10:47:08
+        Started Run 8 @ 10:48:32
+        Started Run 9 @ 10:49:56
+        Started Run 10 @ 10:51:21
+
+    Type: Copy:
+        11484.7
+        11474.7
+        11470.3
+        11470
+        11493.1
+        11469.8
+        11497.6
+        11488.1
+        11476.3
+        11492.1
+
+    Average: 11481.7 MB/s
+    Deviation: 0.09%
+    Samples: 10
+
+    Comparison of 5,467 OpenBenchmarking.org samples since 26 February 2011; median result: 38332 MB/s. Box plot of samples:
+    [   |-*-----########!#########-----------------*----------------*-*-*--|       *        ]
+          ^ This Result (6th Percentile): 11482
+                      6 x 32 GB DDR4-2933MT: 88066 ^   16 x GB DDR4-3200MT: 146973 ^
+                                       12 x 8192 MB DDR4-2666MT: 127355 ^
+             12 x 32 GB DDR4-2400MHz Micron 36ASF4G72PZ-2G6D1: 124265 ^
+                                    8 x 8192 MB DDR4-2666MT: 119746 ^
+
+Stream 2013-01-17:
+    pts/stream-1.3.3 [Type: Scale]
+    Test 2 of 4
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      14 Minutes
+    Estimated Time To Completion: 41 Minutes [11:33 UTC]
+        Utilizing Data From Shared Cache @ 10:52:47
+
+    Type: Scale:
+        8948.5
+        8949.4
+        8943.1
+        8922.5
+        8950.5
+        8930.4
+        8955.5
+        8944.6
+        8946.3
+        8926.9
+
+    Average: 8941.8 MB/s
+    Deviation: 0.12%
+    Samples: 10
+
+    Comparison of 2,712 OpenBenchmarking.org samples since 26 February 2011; median result: 37535 MB/s. Box plot of samples:
+    [ |--*---##########!######------------------------*-----*---------------*---*-|   *     ]
+         ^ This Result (7th Percentile): 8942
+                     12 x 16384 MB DDR4-2666MT: 97462 ^   16 x GB DDR4-2933MT: 158746 ^
+                                                    16 x GB DDR4-3200MT: 146917 ^
+                                          16 x 16384 MB DDR4-3200MT: 140665 ^
+                           12 x 8192 MB DDR4-2666MT: 109587 ^
+
+Stream 2013-01-17:
+    pts/stream-1.3.3 [Type: Triad]
+    Test 3 of 4
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      14 Minutes
+    Estimated Time To Completion: 28 Minutes [11:19 UTC]
+        Utilizing Data From Shared Cache @ 10:52:50
+
+    Type: Triad:
+        10252.3
+        10259.1
+        10253.9
+        10250.5
+        10249.6
+        10239.2
+        10247.1
+        10279.8
+        10260.9
+        10278.3
+
+    Average: 10257.1 MB/s
+    Deviation: 0.13%
+    Samples: 10
+
+    Comparison of 2,775 OpenBenchmarking.org samples since 26 February 2011; median result: 40639 MB/s. Box plot of samples:
+    [ |--*---##########!######-----------------*-----------*---------*--*--------|    *     ]
+         ^ This Result (8th Percentile): 10257
+                8 x 8192 MB DDR4-2666MT: 93394 ^          16 x GB DDR4-2933MT: 176429 ^
+                                            16 x GB DDR4-3200MT: 145693 ^
+                                   16 x 16384 MB DDR4-3200MT: 140562 ^
+                          12 x 8192 MB DDR4-2666MT: 117902 ^
+
+Stream 2013-01-17:
+    pts/stream-1.3.3 [Type: Add]
+    Test 4 of 4
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 14 Minutes [11:06 UTC]
+        Utilizing Data From Shared Cache @ 10:52:52
+
+    Type: Add:
+        10258.3
+        10259.5
+        10255.5
+        10249.8
+        10254.3
+        10255.3
+        10251.7
+        10275.3
+        10240.1
+        10236.9
+
+    Average: 10253.7 MB/s
+    Deviation: 0.10%
+    Samples: 10
+
+    Comparison of 2,754 OpenBenchmarking.org samples since 26 February 2011; median result: 40826 MB/s. Box plot of samples:
+    [ |--*---##########!######-----------------*------------*---------*-*--------|     *    ]
+         ^ This Result (8th Percentile): 10254
+                8 x 8192 MB DDR4-2666MT: 92778 ^           16 x GB DDR4-2933MT: 176237 ^
+                                            16 x GB DDR4-3200MT: 144513 ^
+                                    16 x 16384 MB DDR4-3200MT: 140893 ^
+                           12 x 8192 MB DDR4-2666MT: 118917 ^
+
+
+    Percentile Classification Of Current Benchmark Run
+    MEMORY
+        Stream
+            Copy:   6th
+            Scale:  7th
+            Triad:  8th
+            Add:    8th
+                    OpenBenchmarking.org Percentile
+    Do you want to view the text results of the testing (Y/n): y
+sistem2ramstream
+Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+
+sistem2ramstream:
+
+        Processor: Common KVM (4 Cores), Motherboard: QEMU Standard PC (i440FX + PIIX 1996) (rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org BIOS), Memory: 8GB, Disk: 86GB QEMU HDD, Graphics: bochs-drmdrmfb, Monitor: QEMU Monitor
+
+        OS: Ubuntu 20.04.4 LTS, Kernel: 5.15.0-47-generic (x86_64), Compiler: GCC 9.4.0, File-System: overlayfs, Screen Resolution: 1024x768, System Layer: Docker
+
+
+    Stream 2013-01-17
+    Type: Copy
+    MB/s > Higher Is Better
+    sistem2ramstream . 11481.7 |=============================================================
+
+
+    Stream 2013-01-17
+    Type: Scale
+    MB/s > Higher Is Better
+    sistem2ramstream . 8941.8 |==============================================================
+
+
+    Stream 2013-01-17
+    Type: Triad
+    MB/s > Higher Is Better
+    sistem2ramstream . 10257.1 |=============================================================
+
+
+    Stream 2013-01-17
+    Type: Add
+    MB/s > Higher Is Better
+    sistem2ramstream . 10253.7 |=============================================================
+
+    Would you like to upload the results to OpenBenchmarking.org (y/n): y
+    Would you like to attach the system logs (lspci, dmesg, lsusb, etc) to the test result (y/n): y
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209152-NE-SISTEM2RA48
+
+root@b6c395206842:/phoronix-test-suite#

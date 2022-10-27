@@ -1,0 +1,160 @@
+root@b396838ef6fe:/phoronix-test-suite# ./phoronix-test-suite benchmark pts/compress-7zip-1.9.0 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ..............................................................................................................
+
+Phoronix Test Suite v10.8.3
+
+    Installed:     pts/compress-7zip-1.9.0
+
+System Information
+
+
+  PROCESSOR:              Intel Xeon E3-1225 v5 @ 3.70GHz
+    Core Count:           4
+    Extensions:           SSE 4.2 + AVX2 + AVX + RDRAND + FSGSBASE
+    Cache Size:           8 MB
+    Microcode:            0xf0
+    Core Family:          Skylake
+    Scaling Driver:       intel_pstate powersave (EPP: balance_performance)
+
+  GRAPHICS:               i915drmfb
+    Frequency:            1150MHz
+    Monitor:              DELL IN1930
+    Screen:               1366x768
+
+  MOTHERBOARD:            Dell 07T4MC
+    BIOS Version:         1.0.11
+    Audio:                Realtek ALC3861
+
+  MEMORY:                 8GB
+
+  DISK:                   1000GB TOSHIBA DT01ACA1
+    File-System:          overlayfs
+    Disk Scheduler:       MQ-DEADLINE
+
+  OPERATING SYSTEM:       Ubuntu 20.04.4 LTS
+    Kernel:               5.15.0-47-generic (x86_64)
+    Compiler:             GCC 9.4.0
+    System Layer:         Docker
+    Security:             itlb_multihit: KVM: Mitigation of VMX disabled
+                          + l1tf: Mitigation of PTE Inversion; VMX: conditional cache flushes SMT disabled
+                          + mds: Mitigation of Clear buffers; SMT disabled
+                          + meltdown: Mitigation of PTI
+                          + mmio_stale_data: Mitigation of Clear buffers; SMT disabled
+                          + retbleed: Mitigation of IBRS
+                          + spec_store_bypass: Mitigation of SSB disabled via prctl and seccomp
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of IBRS IBPB: conditional RSB filling
+                          + srbds: Mitigation of Microcode
+                          + tsx_async_abort: Mitigation of TSX disabled
+
+    Would you like to save these test results (Y/n): Y
+
+    Recently Saved Test Results:
+       sistem4ujistoragefiofio4kb   [2 days old]
+       sistem4ujistoragefio         [2 days old]
+       sistem4ujiramstream          [2 days old]
+       sistem4ujicpu7zip            [2 days old]
+
+    Enter a name for the result file: sistem3ujicpu7zip
+    Enter a unique name to describe this test run / configuration: sistem3ujicpu7zip
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+New Description:
+
+7-Zip Compression 22.00:
+    pts/compress-7zip-1.9.0
+    Test 1 of 1
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 11 Minutes [10:34 UTC]
+        Started Run 1 @ 10:23:58
+        Started Run 2 @ 10:24:31
+        Started Run 3 @ 10:25:05
+        Started Run 4 @ 10:25:38
+        Started Run 5 @ 10:26:11
+        Started Run 6 @ 10:26:45
+        Started Run 7 @ 10:27:18
+        Started Run 8 @ 10:27:51
+        Started Run 9 @ 10:28:25
+        Started Run 10 @ 10:28:58
+
+    Test: Compression Rating:
+        18796
+        18666
+        18613
+        18542
+        18583
+        18576
+        18560
+        18557
+        18490
+        18421
+
+    Average: 18580 MIPS
+    Deviation: 0.54%
+    Samples: 10
+
+    Comparison of 581 OpenBenchmarking.org samples since 20 December; median result: 52874 MIPS. Box plot of samples:
+    [|---*########!############-----*-----------------------*-----*---*----*-----------------------------*-*-*------------*--------------------|         * ]
+         ^ This Result (18th Percentile): 18580
+              AMD EPYC 7551: 118997 ^ 2 x Intel Xeon Platinum 8280: 264090 ^   2 x AMD EPYC 7742: 374884 ^                    2 x AMD EPYC 7773X: 554322 ^
+                                     Intel Xeon Platinum 8380: 246200 ^              2 x Intel Xeon Platinum 8380: 438662 ^
+                             AMD Ryzen Threadripper 3970X: 231314 ^                   AMD EPYC 7773X: 392877 ^
+                                  2 x AMD EPYC 7601: 208277 ^                    2 x AMD EPYC 75F3: 384829 ^
+
+
+    Test: Decompression Rating:
+        13711
+        13717
+        13711
+        13704
+        13704
+        13703
+        13709
+        13706
+        13714
+        13707
+
+    Average: 13709 MIPS
+    Deviation: 0.03%
+    Samples: 10
+
+    Comparison of 575 OpenBenchmarking.org samples since 20 December; median result: 43903 MIPS. Box plot of samples:
+    [|-*##*##!############---------*-------------------*---*-*-----------------------*---*----------*-------------------------------*-----|              * ]
+       ^ This Result (16th Percentile): 13709
+          ^ Apple M1: 27113        2 x AMD EPYC 7601: 269904 ^ AMD EPYC 7763: 384603 ^                                         2 x AMD EPYC 7763: 706055 ^
+                      2 x Intel Xeon Platinum 8280: 262305 ^                                              2 x AMD EPYC 7742: 606472 ^
+                  AMD Ryzen Threadripper 3970X: 240108 ^                  2 x AMD EPYC 75F3: 454541 ^
+                                   ^ AMD Ryzen 9 5950X: 144993    AMD EPYC 7773X: 403282 ^
+
+    Do you want to view the text results of the testing (Y/n): Y
+sistem3ujicpu7zip
+Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+
+sistem3ujicpu7zip:
+
+        Processor: Intel Xeon E3-1225 v5 @ 3.70GHz (4 Cores), Motherboard: Dell 07T4MC (1.0.11 BIOS), Memory: 8GB, Disk: 1000GB TOSHIBA DT01ACA1, Graphics: i915drmfb (1150MHz), Audio: Realtek ALC3861, Monitor: DELL IN1930
+
+        OS: Ubuntu 20.04.4 LTS, Kernel: 5.15.0-47-generic (x86_64), Compiler: GCC 9.4.0, File-System: overlayfs, Screen Resolution: 1366x768, System Layer: Docker
+
+
+    7-Zip Compression 22.00
+    Test: Compression Rating
+    MIPS > Higher Is Better
+    sistem3ujicpu7zip . 18580 |=============================================================================================================================
+
+
+    7-Zip Compression 22.00
+    Test: Decompression Rating
+    MIPS > Higher Is Better
+    sistem3ujicpu7zip . 13709 |=============================================================================================================================
+
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209094-TWIN-SISTEM345
+
+root@b396838ef6fe:/phoronix-test-suite# root@ubuntu:/home/ubuntu#

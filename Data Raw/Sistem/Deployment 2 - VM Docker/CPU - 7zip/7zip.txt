@@ -1,0 +1,237 @@
+root@vmdocker:/home/ubuntu# docker exec -it b6c395206842 /bin/bash
+root@b6c395206842:/# cd phoronix-test-suite/
+root@b6c395206842:/phoronix-test-suite# ./phoronix-test-suite benchmark pts/compress-7zip-1.10 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ...............................................
+
+The following dependencies are needed and will be installed:
+
+- build-essential
+- autoconf
+- p7zip-full
+
+This process may take several minutes.
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76, <> line 7.)
+debconf: falling back to frontend: Readline
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.8ubuntu1.1).
+The following additional packages will be installed:
+  automake autotools-dev libsigsegv2 m4 p7zip
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc libtool gettext m4-doc p7zip-rar
+The following NEW packages will be installed:
+  autoconf automake autotools-dev libsigsegv2 m4 p7zip p7zip-full
+0 upgraded, 7 newly installed, 0 to remove and 41 not upgraded.
+Need to get 2641 kB of archives.
+After this operation, 9946 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libsigsegv2 amd64 2.12-2 [13.9 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 m4 amd64 1.4.18-4 [199 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 autoconf all 2.69-11.1 [321 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 autotools-dev all 20180224.1 [39.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 automake all 1:1.16.1-4ubuntu6 [522 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 p7zip amd64 16.02+dfsg-7build1 [358 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/universe amd64 p7zip-full amd64 16.02+dfsg-7build1 [1187 kB]
+Fetched 2641 kB in 3s (896 kB/s)
+Selecting previously unselected package libsigsegv2:amd64.
+(Reading database ... 16849 files and directories currently installed.)
+Preparing to unpack .../0-libsigsegv2_2.12-2_amd64.deb ...
+Unpacking libsigsegv2:amd64 (2.12-2) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../1-m4_1.4.18-4_amd64.deb ...
+Unpacking m4 (1.4.18-4) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../2-autoconf_2.69-11.1_all.deb ...
+Unpacking autoconf (2.69-11.1) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../3-autotools-dev_20180224.1_all.deb ...
+Unpacking autotools-dev (20180224.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../4-automake_1%3a1.16.1-4ubuntu6_all.deb ...
+Unpacking automake (1:1.16.1-4ubuntu6) ...
+Selecting previously unselected package p7zip.
+Preparing to unpack .../5-p7zip_16.02+dfsg-7build1_amd64.deb ...
+Unpacking p7zip (16.02+dfsg-7build1) ...
+Selecting previously unselected package p7zip-full.
+Preparing to unpack .../6-p7zip-full_16.02+dfsg-7build1_amd64.deb ...
+Unpacking p7zip-full (16.02+dfsg-7build1) ...
+Setting up autotools-dev (20180224.1) ...
+Setting up libsigsegv2:amd64 (2.12-2) ...
+Setting up p7zip (16.02+dfsg-7build1) ...
+Setting up m4 (1.4.18-4) ...
+Setting up p7zip-full (16.02+dfsg-7build1) ...
+Setting up autoconf (2.69-11.1) ...
+Setting up automake (1:1.16.1-4ubuntu6) ...
+update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/automake.1.gz because associated file /usr/share/man/man1/automake-1.16.1.gz (of link group automake) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/aclocal.1.gz because associated file /usr/share/man/man1/aclocal-1.16.1.gz (of link group automake) doesn't exist
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+
+Phoronix Test Suite v10.8.3
+
+    To Install:    pts/compress-7zip-1.10.0
+
+    Determining File Requirements .......................................................
+    Searching Download Caches ...........................................................
+
+    1 Test To Install
+        1 File To Download [1.23MB]
+        16MB Of Disk Space Is Needed
+        24 Seconds Estimated Install Time
+
+    pts/compress-7zip-1.10.0:
+        Test Installation 1 of 1
+        1 File Needed [1.23 MB]
+        Downloading: 7z2201-src.tar.xz                                           [1.23MB]
+        Downloading .....................................................................
+        Approximate Install Size: 16 MB
+        Estimated Install Time: 24 Seconds
+        Installing Test @ 10:11:28
+
+
+System Information
+
+
+  PROCESSOR:              Common KVM
+    Core Count:           4
+    Extensions:           SSE 2
+    Cache Size:           16 MB
+    Microcode:            0x1
+    Core Family:          Family 15 Model 6
+
+  GRAPHICS:               bochs-drmdrmfb
+    Monitor:              QEMU Monitor
+    Screen:               1024x768
+
+  MOTHERBOARD:            QEMU Standard PC
+    BIOS Version:         rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org
+
+  MEMORY:                 8GB
+
+  DISK:                   86GB QEMU HDD
+    File-System:          overlayfs
+    Disk Scheduler:       NONE
+
+  OPERATING SYSTEM:       Ubuntu 20.04.4 LTS
+    Kernel:               5.15.0-47-generic (x86_64)                                         
+    Compiler:             GCC 9.4.0                                                          
+    System Layer:         Docker                                                             
+    Security:             itlb_multihit: KVM: Mitigation of VMX unsupported                  
+                          + l1tf: Mitigation of PTE Inversion                                
+                          + mds: Vulnerable: Clear buffers attempted no microcode; SMT Host state unknown
+                          + meltdown: Mitigation of PTI                                      
+                          + mmio_stale_data: Not affected                                    
+                          + retbleed: Not affected                                           
+                          + spec_store_bypass: Vulnerable                                    
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of Retpolines STIBP: disabled RSB filling 
+                          + srbds: Not affected                                              
+                          + tsx_async_abort: Not affected                                    
+
+    Would you like to save these test results (Y/n): Y
+    Enter a name for the result file: sistem2cpu7zip
+    Enter a unique name to describe this test run / configuration: sistem2cpu7zip
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+New Description:
+
+7-Zip Compression 22.01:
+    pts/compress-7zip-1.10.0
+    Test 1 of 1
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 11 Minutes [10:23 UTC]
+        Started Run 1 @ 10:12:24
+        Started Run 2 @ 10:12:57
+        Started Run 3 @ 10:13:29
+        Started Run 4 @ 10:14:02
+        Started Run 5 @ 10:14:34
+        Started Run 6 @ 10:15:07
+        Started Run 7 @ 10:15:39
+        Started Run 8 @ 10:16:12
+        Started Run 9 @ 10:16:44
+        Started Run 10 @ 10:17:16
+
+    Test: Compression Rating:
+        19077
+        19281
+        19409
+        19483
+        19309
+        19318
+        19513
+        19348
+        19466
+        19378
+
+    Average: 19358 MIPS
+    Deviation: 0.65%
+    Samples: 10
+
+    Comparison of 189 OpenBenchmarking.org samples since 31 August; median result: 67066 MIPS. Box plot of samples:
+    [|-*--#*###!#####------*--------*-*---*------------------------------------------------|]
+       ^ This Result (8th Percentile): 19358
+           ^ AMD Ryzen 5 5500U: 41297     ^ AMD Ryzen Threadripper 3970X: 225068
+                                      ^ AMD Ryzen Threadripper PRO 5965WX: 199529
+                                    ^ AMD Ryzen Threadripper 3990X: 189890
+                           ^ Intel Core i9-12900K: 134788
+
+
+    Test: Decompression Rating:
+        14143
+        14107
+        14089
+        14151
+        14135
+        14131
+        14088
+        14152
+        14108
+        14096
+
+    Average: 14120 MIPS
+    Deviation: 0.18%
+    Samples: 10
+
+    Comparison of 188 OpenBenchmarking.org samples since 31 August; median result: 61982 MIPS. Box plot of samples:
+    [|*#####!######----*------------*----------------*-*-----------------------------------|]
+      ^ This Result (8th Percentile): 14120
+                  AMD Ryzen Threadripper 3990X: 374014 ^
+                2 x Intel Xeon Platinum 8380: 356434 ^
+                                    ^ AMD Ryzen Threadripper 3970X: 235530
+                       ^ AMD Ryzen 9 5950X: 141163
+
+    Do you want to view the text results of the testing (Y/n): y
+sistem2cpu7zip
+Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+
+sistem2cpu7zip:
+
+        Processor: Common KVM (4 Cores), Motherboard: QEMU Standard PC (i440FX + PIIX 1996) (rel-1.15.0-0-g2dd4b9b3f840-prebuilt.qemu.org BIOS), Memory: 8GB, Disk: 86GB QEMU HDD, Graphics: bochs-drmdrmfb, Monitor: QEMU Monitor
+
+        OS: Ubuntu 20.04.4 LTS, Kernel: 5.15.0-47-generic (x86_64), Compiler: GCC 9.4.0, File-System: overlayfs, Screen Resolution: 1024x768, System Layer: Docker
+
+
+    7-Zip Compression 22.01
+    Test: Compression Rating
+    MIPS > Higher Is Better
+    sistem2cpu7zip . 19358 |=================================================================
+
+
+    7-Zip Compression 22.01
+    Test: Decompression Rating
+    MIPS > Higher Is Better
+    sistem2cpu7zip . 14120 |=================================================================
+
+    Would you like to upload the results to OpenBenchmarking.org (y/n): y
+    Would you like to attach the system logs (lspci, dmesg, lsusb, etc) to the test result (y/n): y
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209150-NE-SISTEM2CP22
+
+root@b6c395206842:/phoronix-test-suite#

@@ -1,0 +1,311 @@
+root@b396838ef6fe:/phoronix-test-suite# ./phoronix-test-suite benchmark pts/fio-1.15.0 FORCE_TIMES_TO_RUN=10
+
+    Evaluating External Test Dependencies ..............................................................................................................
+
+Phoronix Test Suite v10.8.3
+
+    Installed:     pts/fio-1.15.0
+
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0
+    Disk Test Configuration
+        1: Random Read
+        2: Random Write
+        3: Sequential Read
+        4: Sequential Write
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 3,4
+
+
+        1: IO_uring
+        2: POSIX AIO
+        3: Sync
+        4: Linux AIO
+        5: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Engine: 4
+
+
+        1: Yes
+        2: No
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Buffered: 22
+
+        1: Yes
+        2: No
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Buffered: 2
+
+
+        1: No
+        2: Yes
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Direct: 2
+
+
+        1:  4KB
+        2:  8KB
+        3:  16KB
+        4:  32KB
+        5:  64KB
+        6:  128KB
+        7:  256KB
+        8:  512KB
+        9:  1MB
+        10: 2MB
+        11: 4MB
+        12: 8MB
+        13: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Block Size: 9
+
+
+System Information
+
+
+  PROCESSOR:              Intel Xeon E3-1225 v5 @ 3.70GHz
+    Core Count:           4
+    Extensions:           SSE 4.2 + AVX2 + AVX + RDRAND + FSGSBASE
+    Cache Size:           8 MB
+    Microcode:            0xf0
+    Core Family:          Skylake
+    Scaling Driver:       intel_pstate powersave (EPP: balance_performance)
+
+  GRAPHICS:               i915drmfb
+    Frequency:            1150MHz
+    Monitor:              DELL IN1930
+    Screen:               1366x768
+
+  MOTHERBOARD:            Dell 07T4MC
+    BIOS Version:         1.0.11
+    Audio:                Realtek ALC3861
+
+  MEMORY:                 8GB
+
+  DISK:                   1000GB TOSHIBA DT01ACA1
+    File-System:          overlayfs
+    Disk Scheduler:       MQ-DEADLINE
+
+  OPERATING SYSTEM:       Ubuntu 20.04.4 LTS
+    Kernel:               5.15.0-47-generic (x86_64)
+    Compiler:             GCC 9.4.0
+    System Layer:         Docker
+    Security:             itlb_multihit: KVM: Mitigation of VMX disabled
+                          + l1tf: Mitigation of PTE Inversion; VMX: conditional cache flushes SMT disabled
+                          + mds: Mitigation of Clear buffers; SMT disabled
+                          + meltdown: Mitigation of PTI
+                          + mmio_stale_data: Mitigation of Clear buffers; SMT disabled
+                          + retbleed: Mitigation of IBRS
+                          + spec_store_bypass: Mitigation of SSB disabled via prctl and seccomp
+                          + spectre_v1: Mitigation of usercopy/swapgs barriers and __user pointer sanitization
+                          + spectre_v2: Mitigation of IBRS IBPB: conditional RSB filling
+                          + srbds: Mitigation of Microcode
+                          + tsx_async_abort: Mitigation of TSX disabled
+
+    Would you like to save these test results (Y/n): Y
+
+    Recently Saved Test Results:
+       sistem3ujiramstream          [Today]
+       sistem3ujicpu7zip            [Today]
+       sistem4ujistoragefiofio4kb   [2 days old]
+       sistem4ujistoragefio         [2 days old]
+       sistem4ujiramstream          [2 days old]
+
+    Enter a name for the result file: sistem3ujistoragefiosequential1mb
+    Enter a unique name to describe this test run / configuration: sistem3ujistoragefiosequential1mb
+
+If desired, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+New Description:
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 1 of 2
+    Estimated Trial Run Count:    10
+    Estimated Test Run-Time:      7 Minutes
+    Estimated Time To Completion: 12 Minutes [11:37 UTC]
+        Running Pre-Test Script @ 11:25:50
+        Started Run 1 @ 11:25:51
+        Running Interim Test Script @ 11:26:29
+        Started Run 2 @ 11:26:31
+        Running Interim Test Script @ 11:27:10
+        Started Run 3 @ 11:27:12
+        Running Interim Test Script @ 11:27:51
+        Started Run 4 @ 11:27:53
+        Running Interim Test Script @ 11:28:31
+        Started Run 5 @ 11:28:33
+        Running Interim Test Script @ 11:29:12
+        Started Run 6 @ 11:29:14
+        Running Interim Test Script @ 11:29:53
+        Started Run 7 @ 11:29:55
+        Running Interim Test Script @ 11:30:34
+        Started Run 8 @ 11:30:36
+        Running Interim Test Script @ 11:31:14
+        Started Run 9 @ 11:31:16
+        Running Interim Test Script @ 11:31:55
+        Started Run 10 @ 11:31:57
+        Running Post-Test Script @ 11:32:35
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        192
+        192
+        192
+        192
+        192
+        192
+        192
+        184
+        192
+        193
+
+    Average: 191 MB/s
+    Deviation: 1.35%
+    Samples: 10
+
+    Comparison of 42 OpenBenchmarking.org samples since 6 January; median result: 954 MB/s. Box plot of samples:
+    [--*#*##################!###################################################################################-----------------------------------------| ]
+         ^ This Result (38th Percentile): 191
+       ^ 256GB Sabrent: 112
+
+
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        188
+        189
+        189
+        188
+        189
+        189
+        188
+        181
+        189
+        189
+
+    Average: 188 IOPS
+    Deviation: 1.31%
+    Samples: 10
+
+    Comparison of 47 OpenBenchmarking.org samples since 6 January; median result: 1046 IOPS. Box plot of samples:
+    [######!###############################--------------------------------------------------------------------------------------------------------------| ]
+
+Flexible IO Tester 3.29:
+    pts/fio-1.15.0 [Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory]
+    Test 2 of 2
+    Estimated Trial Run Count:    10
+    Estimated Time To Completion: 6 Minutes [11:37 UTC]
+        Running Pre-Test Script @ 11:32:45
+        Started Run 1 @ 11:32:45
+        Running Interim Test Script @ 11:33:18
+        Started Run 2 @ 11:33:20
+        Running Interim Test Script @ 11:33:53
+        Started Run 3 @ 11:33:55
+        Running Interim Test Script @ 11:34:27
+        Started Run 4 @ 11:34:29
+        Running Interim Test Script @ 11:35:02
+        Started Run 5 @ 11:35:04
+        Running Interim Test Script @ 11:35:36
+        Started Run 6 @ 11:35:38
+        Running Interim Test Script @ 11:36:11
+        Started Run 7 @ 11:36:13
+        Running Interim Test Script @ 11:36:45
+        Started Run 8 @ 11:36:47
+        Running Interim Test Script @ 11:37:20
+        Started Run 9 @ 11:37:22
+        Running Interim Test Script @ 11:37:55
+        Started Run 10 @ 11:37:57
+        Running Post-Test Script @ 11:38:29
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        187
+        191
+        192
+        190
+        190
+        190
+        191
+        178
+        190
+        191
+
+    Average: 189 MB/s
+    Deviation: 2.16%
+    Samples: 10
+
+    Comparison of 47 OpenBenchmarking.org samples since 6 January; median result: 304 MB/s. Box plot of samples:
+    [##*#!############################################################################################################-----------------------------------| ]
+       ^ This Result (42nd Percentile): 189
+
+
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory:
+        184
+        187
+        188
+        186
+        186
+        187
+        188
+        174
+        186
+        187
+
+    Average: 185 IOPS
+    Deviation: 2.23%
+    Samples: 10
+
+    Comparison of 47 OpenBenchmarking.org samples since 6 January; median result: 301 IOPS. Box plot of samples:
+    [##*!#########################################################################################-------------------------------------------------------| ]
+       ^ This Result (42nd Percentile): 185
+
+
+    Percentile Classification Of Current Benchmark Run
+    DISK
+        Flexible IO Tester
+            Seq Read - Linux AIO - No - Yes - 1MB:   34th
+            Seq Write - Linux AIO - No - Yes - 1MB:  42nd
+                                                     OpenBenchmarking.org Percentile
+    Do you want to view the text results of the testing (Y/n): Y
+sistem3ujistoragefiosequential1mb
+Docker testing on Ubuntu 20.04.4 LTS via the Phoronix Test Suite.
+
+
+sistem3ujistoragefiosequential1mb:
+
+        Processor: Intel Xeon E3-1225 v5 @ 3.70GHz (4 Cores), Motherboard: Dell 07T4MC (1.0.11 BIOS), Memory: 8GB, Disk: 1000GB TOSHIBA DT01ACA1, Graphics: i915drmfb (1150MHz), Audio: Realtek ALC3861, Monitor: DELL IN1930
+
+        OS: Ubuntu 20.04.4 LTS, Kernel: 5.15.0-47-generic (x86_64), Compiler: GCC 9.4.0, File-System: overlayfs, Screen Resolution: 1366x768, System Layer: Docker
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    MB/s > Higher Is Better
+    sistem3ujistoragefiosequential1mb . 191 |===============================================================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Read - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    IOPS > Higher Is Better
+    sistem3ujistoragefiosequential1mb . 188 |===============================================================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    MB/s > Higher Is Better
+    sistem3ujistoragefiosequential1mb . 189 |===============================================================================================================
+
+
+    Flexible IO Tester 3.29
+    Type: Sequential Write - Engine: Linux AIO - Buffered: No - Direct: Yes - Block Size: 1MB - Disk Target: Default Test Directory
+    IOPS > Higher Is Better
+    sistem3ujistoragefiosequential1mb . 185 |===============================================================================================================
+
+
+    Results Uploaded To: https://openbenchmarking.org/result/2209095-TWIN-SISTEM364
+
+root@b396838ef6fe:/phoronix-test-suite# root@ubuntu:/home/ubuntu#
